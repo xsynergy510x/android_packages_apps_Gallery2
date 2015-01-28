@@ -2,7 +2,7 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_CFLAGS += -DEGL_EGLEXT_PROTOTYPES
+LOCAL_CFLAGS += -DEGL_EGLEXT_PROTOTYPES -fno-strict-aliasing
 
 LOCAL_SRC_FILES := jni_egl_fence.cpp
 
@@ -44,7 +44,7 @@ LOCAL_SRC_FILES := filters/gradient.c \
                    filters/tinyplanet.cc \
                    filters/kmeans.cc
 
-LOCAL_CFLAGS    += -ffast-math -O3 -funroll-loops
+LOCAL_CFLAGS    += -ffast-math -O3 -funroll-loops -fno-strict-aliasing
 LOCAL_LDLIBS := -llog -ljnigraphics
 LOCAL_ARM_MODE := arm
 
